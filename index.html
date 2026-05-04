@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Akash Anand — AI/ML Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fafaf9;
+      --text: #1a1a1a;
+      --muted: #6b6b6b;
+      --border: #e4e4e0;
+      --btn-bg: #f0f0ee;
+    }
+
+    [data-theme="dark"] {
+      --bg: #111110;
+      --text: #e8e8e6;
+      --muted: #888884;
+      --border: #2a2a28;
+      --btn-bg: #1e1e1c;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.2rem;
+    }
+
+    /* HEADER */
+    header {
+      padding: 3.5rem 0 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .header-left h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(2rem, 6vw, 2.8rem);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+    .header-left p {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+    }
+    .contact-links {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 2;
+      text-align: right;
+    }
+    .contact-links a:hover { color: var(--text); }
+
+    /* TOGGLE */
+    .toggle-btn {
+      background: var(--btn-bg);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.85rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .toggle-btn:hover { color: var(--text); border-color: var(--muted); }
+
+    /* SECTION */
+    section {
+      padding: 2.4rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .body-text {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+
+    /* EDUCATION */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.25rem;
+    }
+    .edu-row h3 { font-size: 0.93rem; font-weight: 500; }
+    .year { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+    .edu-degree { font-size: 0.86rem; color: var(--muted); margin-bottom: 0.2rem; }
+    .edu-cgpa { font-size: 0.84rem; font-weight: 500; }
+
+    /* SKILLS */
+    .skills-table { width: 100%; border-collapse: collapse; }
+    .skills-table tr { border-bottom: 1px solid var(--border); }
+    .skills-table tr:last-child { border-bottom: none; }
+    .skills-table td {
+      padding: 0.65rem 0;
+      font-size: 0.86rem;
+      vertical-align: top;
+    }
+    .skills-table td:first-child {
+      color: var(--muted);
+      width: 30%;
+      font-size: 0.8rem;
+      padding-right: 1.2rem;
+      padding-top: 0.7rem;
+    }
+
+    /* PROJECTS */
+    .project {
+      padding-bottom: 1.8rem;
+      margin-bottom: 1.8rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .project:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.45rem;
+    }
+    .project-title { font-size: 0.93rem; font-weight: 500; }
+    .project-tags { font-size: 0.76rem; color: var(--muted); flex-shrink: 0; }
+    .project-desc { font-size: 0.86rem; color: var(--muted); line-height: 1.75; }
+
+    /* ACHIEVEMENTS */
+    .achievement-list { list-style: none; }
+    .achievement-list li {
+      font-size: 0.86rem;
+      color: var(--muted);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0.75rem;
+      align-items: baseline;
+      line-height: 1.65;
+    }
+    .achievement-list li:last-child { border-bottom: none; }
+    .achievement-list li::before { content: '—'; color: var(--border); flex-shrink: 0; }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.4rem 2rem;
+    }
+    .contact-row { display: flex; gap: 0.6rem; font-size: 0.86rem; }
+    .contact-row span { color: var(--muted); font-size: 0.8rem; min-width: 58px; }
+
+    footer {
+      padding: 1.8rem 0;
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    /* MOBILE */
+    @media (max-width: 560px) {
+      .container { padding: 0 1rem; }
+      header { padding: 2.5rem 0 2rem; }
+      header .container { flex-direction: column; gap: 1.2rem; }
+      .header-right { align-items: flex-start; }
+      .contact-links { text-align: left; }
+      .project-header { flex-direction: column; gap: 0.2rem; }
+      .project-tags { font-size: 0.74rem; }
+      .skills-table td:first-child { width: 38%; }
+      .contact-grid { grid-template-columns: 1fr; }
+      section { padding: 2rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="header-left">
+        <h1>Akash Anand</h1>
+        <p>AI &amp; Machine Learning Engineer · Bengaluru, India</p>
+      </div>
+      <div class="header-right">
+        <button class="toggle-btn" id="theme-toggle">☽ Dark</button>
+        <div class="contact-links">
+          <a href="mailto:aakashaanand@protonmail.com">aakashaanand@protonmail.com</a><br>
+          <a href="https://github.com/aakashaaananda" target="_blank">github.com/aakashaaananda</a><br>
+          +91 90710 92615
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section>
+      <p class="section-label">Education</p>
+      <div class="edu-row">
+        <h3>M. S. Ramaiah University of Applied Sciences</h3>
+        <span class="year">2022 – 2026</span>
+      </div>
+      <p class="edu-degree">Bachelor of Technology — Artificial Intelligence &amp; Machine Learning</p>
+      <p class="edu-cgpa">CGPA &nbsp;8.9 / 10.0</p>
+    </section>
+
+    <section>
+      <p class="section-label">Skills</p>
+      <table class="skills-table">
+        <tr>
+          <td>Languages</td>
+          <td>Python, Java, R, Go</td>
+        </tr>
+        <tr>
+          <td>AI / ML</td>
+          <td>PyTorch, Scikit-learn, Optuna, LangChain, LangGraph, Unsloth, CrewAI</td>
+        </tr>
+        <tr>
+          <td>Data &amp; Viz</td>
+          <td>Pandas, NumPy, Matplotlib, Seaborn, Plotly, Power BI</td>
+        </tr>
+        <tr>
+          <td>Web</td>
+          <td>React, HTML, CSS, JavaScript, Go</td>
+        </tr>
+        <tr>
+          <td>Tools</td>
+          <td>Git, Docker, MySQL, SQLite, AWS, Azure, DSA</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <p class="section-label">Projects</p>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">Autonomous Multi-Agent Enterprise Customer Support System</span>
+          <span class="project-tags">LangGraph · CrewAI · MCP · Unsloth</span>
+        </div>
+        <p class="project-desc">
+          Orchestrated multi-agent system with continuous self-learning capabilities using LangGraph and CrewAI. Integrated MCP for agent coordination and fine-tuned open-source GPT models with Unsloth for domain-specific customer support performance.
+        </p>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">AI-Enabled Structural Health Monitoring via Piezoelectric Sensors</span>
+          <span class="project-tags">PINN · BNN · Gaussian Process · SVM</span>
+        </div>
+        <p class="project-desc">
+          Trained Physics-Informed Neural Networks and Bayesian Neural Networks using industry-recommended methodologies. Implemented Gaussian Process Regression and SVM for deployment on small-scale embedded devices.
+        </p>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">SDG Classification — Aligning Companies to Sustainability Goals</span>
+          <span class="project-tags">BERT · Transformers · Optuna · NLP</span>
+        </div>
+        <p class="project-desc">
+          BERT-based text classifier to identify which UN Sustainable Development Goals companies align with, using textual data. Improved accuracy through data augmentation and hyperparameter optimisation using Optuna.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-label">Achievements &amp; Research</p>
+      <ul class="achievement-list">
+        <li>Research paper on AI-Enabled Structural Health Monitoring using Piezoelectric Sensors</li>
+        <li>Technical blogs on Medium covering AI frameworks and ML engineering workflows</li>
+        <li>Certifications from AWS, Anthropic, Coursera, NPTEL, edX, and HackerRank in Python, AI, and Data Science</li>
+        <li>Participated in university-level discussions on AI optimisation and ethical AI</li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="section-label">Research Interests</p>
+      <p class="body-text">
+        Deep Learning Architectures, Large Language Models, Image Recognition, Natural Language Processing, MLOps, Responsible AI, Reinforcement Learning, Applied Machine Learning, SAP.
+      </p>
+    </section>
+
+    <section>
+      <p class="section-label">Contact</p>
+      <div class="contact-grid">
+        <div class="contact-row">
+          <span>Email</span>
+          <a href="mailto:aakashaanand@protonmail.com">aakashaanand@protonmail.com</a>
+        </div>
+        <div class="contact-row">
+          <span>GitHub</span>
+          <a href="https://github.com/aakashaaananda" target="_blank">aakashaaananda</a>
+        </div>
+        <div class="contact-row">
+          <span>Phone</span>
+          <span>+91 90710 92615</span>
+        </div>
+        <div class="contact-row">
+          <span>Location</span>
+          <span>Bengaluru, India</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container">Akash Anand · 2025</footer>
+
+  <script>
+    const btn = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    // Apply saved preference on load
+    const saved = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', saved);
+    btn.textContent = saved === 'dark' ? '○ Light' : '☽ Dark';
+
+    btn.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      const next = isDark ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      btn.textContent = next === 'dark' ? '○ Light' : '☽ Dark';
+    });
+  </script>
+
+</body>
+</html>
