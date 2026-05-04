@@ -16,6 +16,13 @@
       --border: #e4e4e0;
     }
 
+    [data-theme="dark"] {
+      --bg: #111110;
+      --text: #e8e8e6;
+      --muted: #888884;
+      --border: #2a2a28;
+    }
+
     body {
       background: var(--bg);
       color: var(--text);
@@ -62,6 +69,20 @@
       color: var(--muted);
       line-height: 1.9;
       text-align: right;
+
+      <button id="theme-toggle" onclick="toggleTheme()" style="
+      margin-top: 0.6rem;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.78rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      ">
+      Dark mode
+      </button>
     }
 
     /* SECTION */
@@ -302,6 +323,27 @@
   </main>
 
   <footer class="container">Akash Anand · 2025</footer>
+  <script>
+  const btn = document.getElementById('theme-toggle');
 
+  // Remember preference across visits
+  if (localStorage.getItem('theme') === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    btn.textContent = 'Light mode';
+  }
+
+  function toggleTheme() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+      btn.textContent = 'Dark mode';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+      btn.textContent = 'Light mode';
+    }
+  }
+  </script>
 </body>
 </html>
