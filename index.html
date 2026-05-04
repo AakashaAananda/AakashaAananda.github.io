@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Akash Anand — AI/ML Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fafaf9;
+      --text: #1a1a1a;
+      --muted: #6b6b6b;
+      --border: #e4e4e0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* HEADER */
+    header {
+      padding: 4rem 0 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .header-left h1 {
+      font-family: 'EB Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+    .header-left p {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .header-right {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.9;
+      text-align: right;
+    }
+
+    /* SECTION */
+    section {
+      padding: 2.8rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    section:last-of-type { border-bottom: none; }
+
+    .section-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.6rem;
+    }
+
+    .about-text {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    /* EDUCATION */
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.3rem;
+    }
+    .edu-row h3 { font-size: 0.95rem; font-weight: 500; }
+    .year { font-size: 0.82rem; color: var(--muted); white-space: nowrap; }
+    .edu-degree { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.2rem; }
+    .edu-cgpa { font-size: 0.85rem; font-weight: 500; }
+
+    /* SKILLS */
+    .skills-table { width: 100%; border-collapse: collapse; }
+    .skills-table tr { border-bottom: 1px solid var(--border); }
+    .skills-table tr:last-child { border-bottom: none; }
+    .skills-table td { padding: 0.7rem 0; font-size: 0.88rem; vertical-align: top; }
+    .skills-table td:first-child {
+      color: var(--muted);
+      width: 36%;
+      font-size: 0.82rem;
+      padding-right: 1.5rem;
+      padding-top: 0.75rem;
+    }
+
+    /* PROJECTS */
+    .project { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+    .project:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+    .project-title { font-size: 0.95rem; font-weight: 500; }
+    .project-tags { font-size: 0.78rem; color: var(--muted); }
+    .project-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.75; }
+
+    /* ACHIEVEMENTS */
+    .achievement-list { list-style: none; }
+    .achievement-list li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0.8rem;
+      align-items: baseline;
+      line-height: 1.6;
+    }
+    .achievement-list li:last-child { border-bottom: none; }
+    .achievement-list li::before { content: '—'; color: var(--border); flex-shrink: 0; }
+
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.4rem 2rem; }
+    .contact-row { display: flex; gap: 0.6rem; font-size: 0.88rem; }
+    .contact-row span { color: var(--muted); min-width: 60px; font-size: 0.82rem; }
+
+    footer {
+      padding: 2rem 0;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 580px) {
+      header .container { flex-direction: column; align-items: flex-start; }
+      .header-right { text-align: left; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .skills-table td:first-child { width: 44%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="header-left">
+        <h1>Akash Anand</h1>
+        <p>AI &amp; Machine Learning Engineer · Bengaluru, India</p>
+      </div>
+      <div class="header-right">
+        <a href="mailto:aakashaanand@protonmail.com">aakashaanand@protonmail.com</a><br>
+        <a href="https://github.com/aakashaaananda" target="_blank">github.com/aakashaaananda</a><br>
+        +91 90710 92615
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section>
+      <p class="section-label">About</p>
+      <p class="about-text">
+        Enthusiastic about the foundational workings of AI model training, data wrangling, and optimisation for better performance. Focused on building robust data pipelines, multi-agent architectures, and evaluation frameworks that enable continuous learning. I apply statistical analysis, machine learning, and data visualisation to extract actionable insights from complex datasets.
+      </p>
+    </section>
+
+    <section>
+      <p class="section-label">Education</p>
+      <div class="edu-row">
+        <h3>M. S. Ramaiah University of Applied Sciences</h3>
+        <span class="year">2022 – 2026</span>
+      </div>
+      <p class="edu-degree">Bachelor of Technology — Artificial Intelligence &amp; Machine Learning</p>
+      <p class="edu-cgpa">CGPA &nbsp;8.9 / 10.0</p>
+    </section>
+
+    <section>
+      <p class="section-label">Skills</p>
+      <table class="skills-table">
+        <tr>
+          <td>Languages</td>
+          <td>Python, Java, Dart, Rust, Go, R</td>
+        </tr>
+        <tr>
+          <td>AI / ML</td>
+          <td>PyTorch, Scikit-learn, TensorFlow, LangChain, LangGraph, CrewAI, Unsloth, Optuna</td>
+        </tr>
+        <tr>
+          <td>Data &amp; Viz</td>
+          <td>Pandas, NumPy, Matplotlib, Seaborn, Plotly, Power BI</td>
+        </tr>
+        <tr>
+          <td>Web</td>
+          <td>React, HTML, CSS, JavaScript, Go</td>
+        </tr>
+        <tr>
+          <td>Tools</td>
+          <td>Git, Docker, MySQL, SQLite, AWS, Azure</td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <p class="section-label">Projects</p>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">Autonomous Multi-Agent Enterprise Customer Support System</span>
+          <span class="project-tags">LangGraph · CrewAI · MCP · Unsloth</span>
+        </div>
+        <p class="project-desc">
+          Orchestrated multi-agent system with continuous self-learning capabilities using LangGraph and CrewAI. Integrated MCP for agent coordination and fine-tuned open-source models with Unsloth for domain-specific customer support performance.
+        </p>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">AI-Enabled Structural Health Monitoring via Piezoelectric Sensors</span>
+          <span class="project-tags">PINN · BNN · Gaussian Process · SVM</span>
+        </div>
+        <p class="project-desc">
+          Trained Physics-Informed Neural Networks and Bayesian Neural Networks for structural monitoring using industry-recommended methodologies. Implemented Gaussian Process Regression and SVM for deployment on small-scale embedded devices.
+        </p>
+      </div>
+
+      <div class="project">
+        <div class="project-header">
+          <span class="project-title">SDG Classification — Aligning Companies to Sustainability Goals</span>
+          <span class="project-tags">BERT · Transformers · Optuna · NLP</span>
+        </div>
+        <p class="project-desc">
+          BERT-based text classifier to identify which UN Sustainable Development Goals companies align with based on textual data. Improved accuracy through data augmentation and hyperparameter optimisation using Optuna.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-label">Achievements &amp; Experience</p>
+      <ul class="achievement-list">
+        <li>Research paper on AI-Enabled Structural Health Monitoring using Piezoelectric Sensors</li>
+        <li>Technical blogs on Medium covering AI frameworks and ML engineering workflows</li>
+        <li>Certifications from Coursera, NPTEL, edX, and HackerRank in Python, AI, and Data Science</li>
+        <li>IIRS, ISRO Dehradun — Online Summer School on Remote Sensing &amp; GIS for Environmental Studies</li>
+        <li>Participated in university Hackathons and Smart India Hackathon (SIH)</li>
+        <li>Active open-source contributor on HuggingFace, focused on AI model experiments and reproducibility</li>
+        <li>Organised coding and AI awareness workshops within university</li>
+      </ul>
+    </section>
+
+    <section>
+      <p class="section-label">Research Interests</p>
+      <p class="about-text">
+        Deep Learning Architectures, Large Language Models, Image Recognition, Natural Language Processing, MLOps, Responsible AI, Reinforcement Learning, Applied Machine Learning.
+      </p>
+    </section>
+
+    <section>
+      <p class="section-label">Contact</p>
+      <div class="contact-grid">
+        <div class="contact-row">
+          <span>Email</span>
+          <a href="mailto:aakashaanand@protonmail.com">aakashaanand@protonmail.com</a>
+        </div>
+        <div class="contact-row">
+          <span>GitHub</span>
+          <a href="https://github.com/aakashaaananda" target="_blank">aakashaaananda</a>
+        </div>
+        <div class="contact-row">
+          <span>Phone</span>
+          <span>+91 90710 92615</span>
+        </div>
+        <div class="contact-row">
+          <span>Location</span>
+          <span>Bengaluru, India</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container">Akash Anand · 2025</footer>
+
+</body>
+</html>
